@@ -10,7 +10,7 @@ public class PortfolioUserEntity {
     @Id
     private String userID;
     @Indexed(unique = true)
-    private int userName;
+    private String userName;
     private String personalName;
     @Version
     private Integer version;
@@ -23,11 +23,11 @@ public class PortfolioUserEntity {
         this.userID = userID;
     }
 
-    public int getUserName() {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUserName(int userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 

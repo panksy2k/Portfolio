@@ -1,3 +1,5 @@
 include ':portfoliouser-service'
+include ':util'
 include ':apis'
-
+include 'portfoliouser-composite-service'
+include 'record-service'
