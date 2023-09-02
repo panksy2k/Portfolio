@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class PortfolioSchemaBuilder {
-    private Map<PortfolioType, Set<AttributeNames>> schemaItem =
+    private Map<PortfolioType, Set<String>> schemaItem =
             new HashMap<>();
 
     public static PortfolioSchemaBuilder basic() {
@@ -16,9 +16,9 @@ public class PortfolioSchemaBuilder {
     }
 
     public PortfolioSchemaBuilder withAttribute(PortfolioType portfolioType,
-                                                AttributeNames portfolioAttribute) {
+                                                String portfolioAttribute) {
         if(schemaItem.containsKey(portfolioType)) {
-            Set<AttributeNames> temp = schemaItem.get(portfolioType);
+            Set<String> temp = schemaItem.get(portfolioType);
             temp.add(portfolioAttribute);
         } else {
             schemaItem.put(portfolioType, Set.of(portfolioAttribute));
@@ -34,7 +34,7 @@ public class PortfolioSchemaBuilder {
             return Collections.<PortfolioSchema>emptyList();
         }
 
-        for(Map.Entry<PortfolioType, Set<AttributeNames>> item :
+        for(Map.Entry<PortfolioType, Set<String>> item :
                 schemaItem.entrySet()) {
             portfolioSchemaList.add(new PortfolioSchema(item.getKey(), item.getValue().stream().toList()));
         }

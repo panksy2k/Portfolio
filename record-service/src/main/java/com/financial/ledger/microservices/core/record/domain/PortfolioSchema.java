@@ -5,9 +5,9 @@ import java.util.List;
 
 public class PortfolioSchema implements Schema {
     private final PortfolioType type;
-    private final List<AttributeNames> attributes;
+    private final List<String> attributes;
 
-    public PortfolioSchema(PortfolioType type, List<AttributeNames> attributes) {
+    public PortfolioSchema(PortfolioType type, List<String> attributes) {
         this.type = type;
         this.attributes = attributes;
     }
@@ -23,7 +23,7 @@ public class PortfolioSchema implements Schema {
     }
 
     @Override
-    public List<AttributeNames> attributes() {
+    public List<String> attributes() {
         return this.attributes;
     }
 }

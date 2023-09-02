@@ -5,5 +5,5 @@ import java.util.List;
 public interface Schema {
     PortfolioType type();
 
-    List<AttributeNames> attributes();
+    List<String> attributes();
 }
