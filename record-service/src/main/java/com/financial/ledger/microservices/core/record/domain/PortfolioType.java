@@ -1,29 +1,33 @@
 package com.financial.ledger.microservices.core.record.domain;
 
 public enum PortfolioType {
-        ASSET("ast"),
-        LIABILITY("lb"),
-        INCOME("inc"),
-        CREDENTIALS("cred");
+    BANK_ACCOUNT("Bank Account"),
+    PENSION("Pension"),
+    TRADING_ACCOUNT("Trading Account"),
+    PROPERTY("House/Property"),
+    CREDIT_CARD("Credit Card"),
+    INSURANCE_COVER("Insurance/Cover"),
+    SUBSCRIPTIONS("Subscription"),
+    AGENCY("Private Agency");
 
-        private final String code;
+    private final String description;
 
-        PortfolioType(String code) {
-            this.code = code;
-        }
-
-        public String code() {
-            return this.code;
-        }
-
-        public static PortfolioType forCode(String code) {
-            for (PortfolioType pt : PortfolioType.values()) {
-                if (pt.code().equalsIgnoreCase(code)) {
-                    return pt;
-                }
-            }
-
-            return null;
-        }
+    PortfolioType(String description) {
+        this.description = description;
     }
+
+    public String description() {
+        return this.description;
+    }
+
+    public static PortfolioType byDescription(String description) {
+        for (PortfolioType t : PortfolioType.values()) {
+            if (description != null && t.description().equalsIgnoreCase(description)) {
+                return t;
+            }
+        }
+
+        return null;
+    }
+}
 
