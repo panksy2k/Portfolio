@@ -30,4 +30,16 @@ public class PortfolioRecord {
     public void setRecordAttributeNameValue(Map<String, String> recordAttributeNameValue) {
         this.recordAttributeNameValue = recordAttributeNameValue;
     }
+
+    public void validateFields() {
+        Map<String, String> recordAttributeNameValue1 = getRecordAttributeNameValue();
+        if(recordAttributeNameValue1 != null && !recordAttributeNameValue1.isEmpty()) {
+            for(String fieldName : recordAttributeNameValue1.keySet()) {
+                String fieldValue = recordAttributeNameValue1.get(fieldName);
+
+
+            }
+        }
+
+    }
 }
